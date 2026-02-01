@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Management System - Demo Screens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* 1. THE SETUP */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cbd5e1;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 0;
+  place-items: center;
+}
+
+/* 2. SLIDE CONTAINER */
+.slide-container {
+  align-items: center;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(30, 58, 138, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  height: 720px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 60px;
+  position: relative;
+  width: 1280px;
+}
+
+/* Decorative Accent Line */
+.slide-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  z-index: 10;
+}
+
+/* 3. TYPOGRAPHY */
+.slide-container h1,
+.slide-container h2,
+.slide-container h3 {
+  color: #1e3a8a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.slide-container p,
+.slide-container li,
+.slide-container .subtitle {
+  color: #475569;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.slide-container .slide-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 15px;
+  margin-top: 10rem;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 4. FORM STYLING */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.form-input {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #334155;
+    background-color: #f1f5f9;
+}
+
+.form-submit-btn {
+    grid-column: span 2;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    width: 200px;
+    justify-self: center;
+}
+
+/* 5. SMS PRESENTATION STYLING */
+.sms-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.phone-mockup {
+    width: 300px;
+    height: 550px;
+    background: #111;
+    border-radius: 36px;
+    border: 8px solid #334155;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.phone-screen {
+    background: #e5e7eb;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-header {
+    background: #fff;
+    padding: 15px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.sms-bubble {
+    background: #fff;
+    margin: 10px;
+    padding: 12px;
+    border-radius: 15px 15px 15px 2px;
+    font-size: 13px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    line-height: 1.4;
+}
+
+.sms-label {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Dashboard Table */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.dashboard-table th {
+    background-color: #1e3a8a;
+    color: #fff;
+    text-align: left;
+    padding: 15px;
+}
+
+.dashboard-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-active { background-color: #dcfce7; color: #166534; }
+.status-pending { background-color: #fef9c3; color: #854d0e; }
+
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Registration Form -->
+<div class="slide-container" id="slide1">
+    <h2 class="slide-title">Member Registration Form</h2>
+    <div class="content-area">
+        <div class="form-grid">
+            <div class="form-group"><label>Full Name</label><div class="form-input">John Doe</div></div>
+            <div class="form-group"><label>Current Office Name</label><div class="form-input">Central Operations Unit</div></div>
+            <div class="form-group"><label>Address</label><div class="form-input">123 Union St, Apt 4B</div></div>
+            <div class="form-group"><label>Taluka</label><div class="form-input">North Taluka</div></div>
+            <div class="form-group"><label>District</label><div class="form-input">Metro District</div></div>
+            <div class="form-group"><label>Date of Birth</label><div class="form-input">1985-06-15</div></div>
+            <div class="form-group"><label>Service Join Date</label><div class="form-input">2010-09-01</div></div>
+            <div class="form-group"><label>Passport Photo</label><div class="form-input">photo.jpg</div></div>
+            <div class="form-group"><label>Mobile Number</label><div class="form-input">+91 98765 43210</div></div>
+            <div class="form-group"><label>Email Address</label><div class="form-input">john.doe@email.com</div></div>
+            <div class="form-group"><label>Education</label><div class="form-input">B.Tech</div></div>
+            <div class="form-group"><label>Expert Field</label><div class="form-input">Logistics</div></div>
+            <div class="form-group"><label>Hobbies</label><div class="form-input">Chess</div></div>
+            <div class="form-group"><label>Username</label><div class="form-input">jdoe_union</div></div>
+            <div class="form-group"><label>Password</label><div class="form-input">••••••••••</div></div>
+            <div class="form-group"><label>Office ID / Joining Letter</label><div class="form-input">id_card.pdf</div></div>
+            <div class="form-submit-btn">Submit Registration</div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 2: Login Form -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Secure Login</h2>
+    <div class="content-area">
+        <div style="background: #fff; padding: 50px; border-radius: 16px; width: 450px; margin: 0 auto; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <i class="fa-solid fa-user-lock" style="font-size: 50px; color: #1e3a8a;"></i>
+            </div>
+            <div class="form-group"><label>Username</label><div class="form-input" style="padding:12px">jdoe_union</div></div>
+            <div class="form-group" style="margin-top:15px"><label>Password</label><div class="form-input" style="padding:12px">••••••••••••</div></div>
+            <div class="form-submit-btn" style="width: 100%; margin-top:25px">Login</div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: SMS Notifications Presentation -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Automated SMS Notifications</h2>
+    <div class="content-area">
+        <div class="sms-container">
+            <!-- Mockup 1: Registration -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-header">Union-Alert</div>
+                    <div class="sms-label" style="margin-top: 20px;">TODAY 10:30 AM</div>
+                    <div class="sms-bubble">
+                        Dear John Doe, thank you for registering with the Union. Your application is under review. Ref: #U-1024.
+                    </div>
+                </div>
+                <p style="text-align:center; color:#fff; margin-top:15px; font-size:14px">Registration Alert</p>
+            </div>
+
+            <!-- Mockup 2: Meeting -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-header">Union-Notice</div>
+                    <div class="sms-label" style="margin-top: 20px;">FRIDAY 09:00 AM</div>
+                    <div class="sms-bubble">
+                        REMINDER: General Body Meeting tomorrow at 11 AM in Main Hall. Your attendance is required.
+                    </div>
+                </div>
+                <p style="text-align:center; color:#fff; margin-top:15px; font-size:14px">Meeting Reminders</p>
+            </div>
+
+            <!-- Mockup 3: Grievance -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-header">Union-Support</div>
+                    <div class="sms-label" style="margin-top: 20px;">2 MINS AGO</div>
+                    <div class="sms-bubble">
+                        Good news! Your grievance regarding "Overtime Delay" (Ref: #G-441) has been marked as RESOLVED.
+                    </div>
+                </div>
+                <p style="text-align:center; color:#fff; margin-top:15px; font-size:14px">Status Updates</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Dashboard - Member List -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Admin Dashboard: Registered Member List</h2>
+    <div class="content-area">
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Member Name</th>
+                    <th>Office / Department</th>
+                    <th>Designation</th>
+                    <th>Join Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>#U-1024</td><td>Sarah Jenkins</td><td>Headquarters</td><td>Senior Analyst</td><td>2015-03-12</td><td><span class="status-badge status-active">Active</span></td></tr>
+                <tr><td>#U-1025</td><td>Michael Chen</td><td>East Branch</td><td>System Admin</td><td>2018-07-22</td><td><span class="status-badge status-active">Active</span></td></tr>
+                <tr><td>#U-1026</td><td>Priya Patel</td><td>West Branch</td><td>Recruiter</td><td>2023-01-05</td><td><span class="status-badge status-pending">Pending</span></td></tr>
+                <tr><td>#U-1027</td><td>David Rossi</td><td>Logistics Hub</td><td>Coordinator</td><td>2019-11-30</td><td><span class="status-badge status-active">Active</span></td></tr>
+                <tr><td>#U-1028</td><td>Emily Blunt</td><td>Finance Dept</td><td>Auditor</td><td>2021-05-18</td><td><span class="status-badge status-active">Active</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
